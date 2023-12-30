@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
+        guard let handle = handle else { return }
+        Auth.auth().removeStateDidChangeListener(handle)
     }
 }

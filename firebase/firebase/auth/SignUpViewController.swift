@@ -36,7 +36,8 @@ class SignUpViewController: UIViewController {
                 self.sendEmailVerificationLink(email, password)
                 
                 // 入力された文字をクリア
-                self.emailTextFielad.text = "";
+                self.nameTextField.text = ""
+                self.emailTextFielad.text = ""
                 self.passwordTextField.text = ""
             } else {
                 print("register failed")
