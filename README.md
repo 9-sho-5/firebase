@@ -35,5 +35,5 @@ FirebaseApp.configure()
 
 
 
-## 6. Authentication を開始する
+## 5. Authentication を開始する
 [Sign-in method] タブで [メール / パスワード] を有効にして、[保存]
