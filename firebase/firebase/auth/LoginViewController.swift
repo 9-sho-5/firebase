@@ -77,5 +77,4 @@ class LoginViewController: UIViewController {
         if segue.identifier == "HomeViewController" {
         }
     }
-    
 }

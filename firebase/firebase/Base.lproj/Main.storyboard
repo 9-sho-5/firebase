@@ -61,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fM2-7B-BdU">
-                                <rect key="frame" x="48" y="173" width="296" height="34"/>
+                                <rect key="frame" x="48" y="199" width="296" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -80,9 +80,15 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
-                                    <action selector="signUp" destination="6ds-lJ-lAt" eventType="touchUpInside" id="DJL-yg-ghl"/>
+                                    <action selector="signUp" destination="6ds-lJ-lAt" eventType="touchUpInside" id="bcu-a1-6qz"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xzk-ZK-gWO">
+                                <rect key="frame" x="48" y="139" width="296" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ezB-PZ-EfW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,6 +96,7 @@
                     <navigationItem key="navigationItem" id="lQ8-Zp-93p"/>
                     <connections>
                         <outlet property="emailTextFielad" destination="fM2-7B-BdU" id="qXq-c0-Xrb"/>
+                        <outlet property="nameTextField" destination="Xzk-ZK-gWO" id="mtH-tY-Qk2"/>
                         <outlet property="passwordTextField" destination="F7e-vU-Bxj" id="SUJ-Qy-2Ic"/>
                         <outlet property="signUpButton" destination="eKO-Jl-dPe" id="0Vd-Bc-J9Y"/>
                     </connections>
@@ -105,13 +112,25 @@
                     <view key="view" contentMode="scaleToFill" id="JuT-a6-Ixf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCl-3h-YfM">
+                                <rect key="frame" x="109" y="162" width="175" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="L0S-27-8ba"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="userNameLabel" destination="ZCl-3h-YfM" id="Sku-rn-jFR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfq-o6-heK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3199" y="375"/>
+            <point key="canvasLocation" x="3197.709923664122" y="374.64788732394368"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="NdB-eC-XTo">
@@ -142,7 +161,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
                                     <action selector="login" destination="psr-aN-O2d" eventType="touchUpInside" id="IGJ-q6-xV3"/>
-                                    <action selector="signUp" destination="6ds-lJ-lAt" eventType="touchUpInside" id="ixh-Fd-D4a"/>
                                 </connections>
                             </button>
                         </subviews>

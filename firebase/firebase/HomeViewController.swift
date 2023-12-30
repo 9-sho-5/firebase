@@ -6,12 +6,25 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet var userNameLabel: UILabel!
+    
+    private var handle: AuthStateDidChangeListenerHandle!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        handle = Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.userNameLabel.text = user.displayName
+        }
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
 }
