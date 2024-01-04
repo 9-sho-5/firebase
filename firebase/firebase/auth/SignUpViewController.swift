@@ -7,6 +7,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
     
@@ -14,6 +16,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet var emailTextFielad: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,19 @@ class SignUpViewController: UIViewController {
                 self.updateUserProfile(name: name)
                 // メール認証するためのメールを送信
                 self.sendEmailVerificationLink(email, password)
+                
+                // ユーザー情報の保存
+                self.db.collection("users").document(name).setData([
+                    "name": name,
+                    "email": email,
+                    "imageUrl": ""
+                ]) { error in
+                    if let error = error {
+                        print("ドキュメントの書き込みに失敗しました:", error)
+                    } else {
+                        print("ドキュメントの書き込みに成功しました")
+                    }
+                }
                 
                 // 入力された文字をクリア
                 self.nameTextField.text = ""

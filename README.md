@@ -35,5 +35,21 @@ FirebaseApp.configure()
 
 
 
-## 5. Authentication を開始する
+## Authentication を開始する
 [Sign-in method] タブで [メール / パスワード] を有効にして、[保存]
+
+
+## Cloud Firestore にデータを追加する
+
+ルール]タブで下記のように修正する
+```
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
+```
