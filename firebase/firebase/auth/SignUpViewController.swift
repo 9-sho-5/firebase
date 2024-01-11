@@ -39,19 +39,6 @@ class SignUpViewController: UIViewController {
                 // メール認証するためのメールを送信
                 self.sendEmailVerificationLink(email, password)
                 
-                // ユーザー情報の保存
-                self.db.collection("users").document(name).setData([
-                    "name": name,
-                    "email": email,
-                    "imageUrl": ""
-                ]) { error in
-                    if let error = error {
-                        print("ドキュメントの書き込みに失敗しました:", error)
-                    } else {
-                        print("ドキュメントの書き込みに成功しました")
-                    }
-                }
-                
                 // 入力された文字をクリア
                 self.nameTextField.text = ""
                 self.emailTextFielad.text = ""
@@ -73,6 +60,9 @@ class SignUpViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        
+        // ユーザー情報の登録
+        self.uploadUserData(name: name, email: email, imageURL: "")
     }
     
     /**
@@ -117,6 +107,24 @@ class SignUpViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
             return
+        }
+    }
+    
+    /**
+     ユーザーデータの保存
+     */
+    func uploadUserData(name: String, email: String, imageURL: String) {
+        // ユーザー情報の保存
+        self.db.collection("users").document(name).setData([
+            "name": name,
+            "email": email,
+            "imageUrl": imageURL
+        ]) { error in
+            if let error = error {
+                print("ドキュメントの書き込みに失敗しました:", error)
+            } else {
+                print("ドキュメントの書き込みに成功しました")
+            }
         }
     }
 }

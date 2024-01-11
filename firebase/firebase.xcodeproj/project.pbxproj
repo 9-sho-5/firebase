@@ -46,6 +46,7 @@
 		ED30DADF2B3E664800C4D356 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DADE2B3E664800C4D356 /* StartViewController.swift */; };
 		ED30DAE12B3E6BE200C4D356 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DAE02B3E6BE200C4D356 /* HomeViewController.swift */; };
 		ED30DAE32B3E737500C4D356 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DAE22B3E737500C4D356 /* LoginViewController.swift */; };
+		EDCE11F32B4FD16C004FE708 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE11F22B4FD16C004FE708 /* UserSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		ED30DADE2B3E664800C4D356 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ED30DAE02B3E6BE200C4D356 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = firebase/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		ED30DAE22B3E737500C4D356 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EDCE11F22B4FD16C004FE708 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		ED30DA9E2B3B13F100C4D356 /* firestore */ = {
 			isa = PBXGroup;
 			children = (
+				EDCE11F22B4FD16C004FE708 /* UserSettingViewController.swift */,
 			);
 			path = firestore;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				ED30DA8F2B3B13C500C4D356 /* ViewController.swift in Sources */,
 				ED30DA8B2B3B13C500C4D356 /* AppDelegate.swift in Sources */,
 				ED30DAA02B3B78E700C4D356 /* SignUpViewController.swift in Sources */,
+				EDCE11F32B4FD16C004FE708 /* UserSettingViewController.swift in Sources */,
 				ED30DAE32B3E737500C4D356 /* LoginViewController.swift in Sources */,
 				ED30DA8D2B3B13C500C4D356 /* SceneDelegate.swift in Sources */,
 				ED30DAE12B3E6BE200C4D356 /* HomeViewController.swift in Sources */,
@@ -429,6 +433,8 @@
 				DEVELOPMENT_TEAM = F37685AA55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = firebase/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -457,6 +463,8 @@
 				DEVELOPMENT_TEAM = F37685AA55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = firebase/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
