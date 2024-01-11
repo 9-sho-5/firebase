@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var emailTextFielad: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    private var saveData: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,8 @@ class LoginViewController: UIViewController {
             if let currentUser = Auth.auth().currentUser {
                 // メール認証されていれば
                 if (currentUser.isEmailVerified) {
+                    // 初回起動したかをUserDefaultsに保存
+                    strongSelf.saveData.set(true, forKey: "isLaunched")
                     // 問題なくログインできれば，Homeに画面遷移する
                     let homeViewController = strongSelf.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                     strongSelf.present(homeViewController, animated: true, completion: nil)

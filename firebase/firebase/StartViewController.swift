@@ -21,8 +21,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         if !saveData.bool(forKey: "isLaunched") {
-            // 初回起動したかをUserDefaultsに保存
-            saveData.set(true, forKey: "isLaunched")
             do {
                 try auth.signOut()
             }
