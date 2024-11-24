@@ -1,10 +1,3 @@
-//
-//  LoginViewController.swift
-//  firebase
-//
-//  Created by ほしょ on 2023/12/29.
-//
-
 import UIKit
 import FirebaseAuth
 
@@ -13,12 +6,17 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var emailTextFielad: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    
     private var saveData: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 15
+    }
+    
+    @IBAction func back() {
+        dismiss(animated: true)
     }
     
     @IBAction func login() {
@@ -30,54 +28,34 @@ class LoginViewController: UIViewController {
             
             if let error = error {
                 print(error.localizedDescription)
-                let alert: UIAlertController = UIAlertController(title: "メールアドレスまたはパスワードが異なります．", message: "もう一度やり直してください．", preferredStyle: .alert)
-                
-                //OKボタン
-                let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: {
-                    //ボタンが押された時の処理
-                    (action: UIAlertAction) -> Void in
-                })
-                
-                //UIAlertControllerにActionを追加
+                let alert = UIAlertController(title: "メールアドレスまたはパスワードが異なります．", message: "もう一度やり直してください．", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alert.addAction(defaultAction)
-                
-                //Alertを表示
                 strongSelf.present(alert, animated: true, completion: nil)
                 return
             }
             
             if let currentUser = Auth.auth().currentUser {
-                // メール認証されていれば
-                if (currentUser.isEmailVerified) {
-                    // 初回起動したかをUserDefaultsに保存
+                if currentUser.isEmailVerified {
                     strongSelf.saveData.set(true, forKey: "isLaunched")
-                    // 問題なくログインできれば，Homeに画面遷移する
-                    let homeViewController = strongSelf.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                    strongSelf.present(homeViewController, animated: true, completion: nil)
+                    strongSelf.performSegue(withIdentifier: "toHome", sender: self) // Segueで画面遷移
                 } else {
-                    let alert: UIAlertController = UIAlertController(title: "メールアドレスが認証されていません．", message: "送信されたメールを確認してください．", preferredStyle: .alert)
-                    
-                    //OKボタン
-                    let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: .default, handler: {
-                        //ボタンが押された時の処理
-                        (action: UIAlertAction) -> Void in
-                    })
-                    
-                    //UIAlertControllerにActionを追加
+                    let alert = UIAlertController(title: "メールアドレスが認証されていません．", message: "送信されたメールを確認してください．", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                     alert.addAction(defaultAction)
-                    
-                    //Alertを表示
                     strongSelf.present(alert, animated: true, completion: nil)
-                    return
                 }
             }
         }
     }
     
-    // 画面遷移時の設定
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // ②Segueの識別子確認
-        if segue.identifier == "HomeViewController" {
+        if segue.identifier == "toHome" {
+            // ここで遷移先のViewControllerにデータを渡すなどの処理を行う
+            if let destinationVC = segue.destination as? HomeViewController {
+                // 必要に応じてデータを渡す処理
+                // destinationVC.someProperty = someValue
+            }
         }
     }
 }

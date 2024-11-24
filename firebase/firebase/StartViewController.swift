@@ -1,10 +1,3 @@
-//
-//  StartViewController.swift
-//  firebase
-//
-//  Created by ほしょ on 2023/12/29.
-//
-
 import UIKit
 import FirebaseAuth
 
@@ -23,15 +16,13 @@ class StartViewController: UIViewController {
         if !saveData.bool(forKey: "isLaunched") {
             do {
                 try auth.signOut()
-            }
-            catch let error {
+            } catch let error {
                 print(error.localizedDescription)
             }
         } else {
             handle = auth.addStateDidChangeListener { auth, user in
-                if (user != nil) {
-                    let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                    self.present(homeViewController, animated: true, completion: nil)
+                if user != nil {
+                    self.performSegue(withIdentifier: "toHome", sender: self)
                 }
             }
         }
@@ -47,10 +38,10 @@ class StartViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle)
     }
     
-    // 画面遷移時の設定
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // ②Segueの識別子確認
-        if segue.identifier == "HomeViewController" {
+        if segue.identifier == "toHome" {
+            // ここで遷移先のViewControllerにデータを渡すなどの処理を行う
+            
         }
     }
 }

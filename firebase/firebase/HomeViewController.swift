@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var userNameLabel: UILabel!
     
     private var handle: AuthStateDidChangeListenerHandle!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

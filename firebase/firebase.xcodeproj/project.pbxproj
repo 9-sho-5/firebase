@@ -46,7 +46,11 @@
 		ED30DADF2B3E664800C4D356 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DADE2B3E664800C4D356 /* StartViewController.swift */; };
 		ED30DAE12B3E6BE200C4D356 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DAE02B3E6BE200C4D356 /* HomeViewController.swift */; };
 		ED30DAE32B3E737500C4D356 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30DAE22B3E737500C4D356 /* LoginViewController.swift */; };
+		EDB2845A2C5F173C00B6AB91 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB284592C5F173C00B6AB91 /* MessageViewController.swift */; };
+		EDB2845E2C5F1D8A00B6AB91 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2845D2C5F1D8A00B6AB91 /* Message.swift */; };
 		EDCE11F32B4FD16C004FE708 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE11F22B4FD16C004FE708 /* UserSettingViewController.swift */; };
+		EDCE11F82B500814004FE708 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE11F72B500814004FE708 /* User.swift */; };
+		EDCE11FA2B501A7E004FE708 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCE11F92B501A7E004FE708 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +68,11 @@
 		ED30DADE2B3E664800C4D356 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ED30DAE02B3E6BE200C4D356 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = firebase/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		ED30DAE22B3E737500C4D356 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EDB284592C5F173C00B6AB91 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		EDB2845D2C5F1D8A00B6AB91 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		EDCE11F22B4FD16C004FE708 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		EDCE11F72B500814004FE708 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EDCE11F92B501A7E004FE708 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,8 @@
 				ED30DA8E2B3B13C500C4D356 /* ViewController.swift */,
 				ED30DADE2B3E664800C4D356 /* StartViewController.swift */,
 				ED30DAE02B3E6BE200C4D356 /* HomeViewController.swift */,
+				EDB2845B2C5F182800B6AB91 /* View */,
+				EDCE11F62B5007E3004FE708 /* Model */,
 				ED30DADB2B3E651C00C4D356 /* extension */,
 				ED30DAA12B3E5EFE00C4D356 /* auth */,
 				ED30DA9E2B3B13F100C4D356 /* firestore */,
@@ -161,9 +171,35 @@
 		ED30DADB2B3E651C00C4D356 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				EDCE11F92B501A7E004FE708 /* UIImage.swift */,
 				ED30DADC2B3E652E00C4D356 /* UIButton.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		EDB2845B2C5F182800B6AB91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EDB2845C2C5F185000B6AB91 /* Message */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDB2845C2C5F185000B6AB91 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				EDB284592C5F173C00B6AB91 /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		EDCE11F62B5007E3004FE708 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDCE11F72B500814004FE708 /* User.swift */,
+				EDB2845D2C5F1D8A00B6AB91 /* Message.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED30DADD2B3E652E00C4D356 /* UIButton.swift in Sources */,
+				EDCE11FA2B501A7E004FE708 /* UIImage.swift in Sources */,
 				ED30DA8F2B3B13C500C4D356 /* ViewController.swift in Sources */,
 				ED30DA8B2B3B13C500C4D356 /* AppDelegate.swift in Sources */,
 				ED30DAA02B3B78E700C4D356 /* SignUpViewController.swift in Sources */,
@@ -278,6 +315,9 @@
 				ED30DAE32B3E737500C4D356 /* LoginViewController.swift in Sources */,
 				ED30DA8D2B3B13C500C4D356 /* SceneDelegate.swift in Sources */,
 				ED30DAE12B3E6BE200C4D356 /* HomeViewController.swift in Sources */,
+				EDB2845E2C5F1D8A00B6AB91 /* Message.swift in Sources */,
+				EDCE11F82B500814004FE708 /* User.swift in Sources */,
+				EDB2845A2C5F173C00B6AB91 /* MessageViewController.swift in Sources */,
 				ED30DADF2B3E664800C4D356 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
